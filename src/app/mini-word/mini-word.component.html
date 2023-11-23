@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <p [ngStyle]="{
+      'color': textColor,
+      'font-size.px': textSize,
+      'font-family': fontFamily
+    }" class="mt-3">
+      Test
+    </p>
+    <div class="row">
+      <div class="col-sm-4">
+        <label for="colorPicker">Couleur du texte :</label>
+        <input type="color" class="form-control" id="colorPicker" [(ngModel)]="textColor" />
+      </div>
+      <div class="col-sm-4">
+        <label for="textSize">Taille du texte :</label>
+        <input type="number" class="form-control" id="textSize" [(ngModel)]="textSize" placeholder="Entrez une taille" />
+      </div>
+      <div class="col-sm-4">
+        <label for="fontFamily">Police du texte :</label>
+        <select class="form-control" id="fontFamily" [(ngModel)]="fontFamily">
+          <option *ngFor="let font of fontList" [value]="font">{{ font }}</option>
+        </select>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+</body>
+</html>
+
